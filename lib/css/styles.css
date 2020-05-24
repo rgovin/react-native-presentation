@@ -1,0 +1,217 @@
+.reveal pre{
+    width: 100%;
+}
+.intro{
+    position: relative;
+}
+.intro .logo-icon {
+    width: 200px;
+    height: 200px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: none;
+    box-shadow: none;
+    object-fit: cover;
+    animation: rotate 5s infinite linear;
+}
+.intro span{
+    margin: 0 0 0 20px;
+    font-size: 2.4em;
+    color: #61DAFB;
+}
+.intro .logo-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logo-container{
+    margin-bottom: 50px;
+}
+.phone-background {
+    position: absolute;
+    width: 200px;
+    height: 400px;
+    border: 2px solid #ffffff;
+    border-radius: 20px;
+    top: -40px;
+    left: 96px;
+    transform: rotate(9deg);
+}
+.phone-background::before {
+    content: '';
+    display: block;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    bottom: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 1px solid #00BCD4;
+    border-radius: 50%;
+    background-color: #fefefe0d;
+    z-index: 3;
+}
+.phone-background::after {
+    content: '';
+    display: block;
+    width: 95%;
+    height: 358px;
+    position: absolute;
+    top: 3px;
+    left: 50%;
+    border: 1px solid #ffffff;
+    border-radius: 16px;
+    transform: translateX(-50%);
+}
+.code{
+    background: #031b28;
+}
+.code-fragment .pre-code{
+    width: 550px;
+    font-size: 16px;
+    overflow: hidden;
+}
+.code-fragment .code{
+    background: #031b28;
+}
+
+.reveal section .virtual-dom-image{
+    height: 50vh;
+}
+.draw-wrapper{
+    margin-top: 20px;
+    display: flex;
+}
+.draw-wrapper span {
+    font-size: 22px;
+}
+.draw-components {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+.draw-components table{
+    margin: 20px 30px;
+    background-color: #031b28;
+    font-size: 35px;
+}
+.draw-components table th{
+    padding: 0;
+    text-align: center;
+    color: #04d8fd;
+    border-color: #ffffff;
+}
+.draw-components table td{
+    text-align: center;
+}
+.draw-components small{
+    line-height: 1em;
+    vertical-align: middle;
+}
+.date-picker-os{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.date-picker-os  .pre-code{
+    width: 100%;
+    margin: 0;
+    font-size: 16px;
+    overflow: hidden;
+    /*transform: translateX(-10%) scale(0.7);*/
+}
+.styling-fragments-wrapper{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.styling-code .pre-code{
+    /*max-width: 40%;*/
+}
+.styling-code-css-to-js{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.jsx-code-wraper{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.jsx-code{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 27px;
+}
+.jsx-code-wraper .right-arrow{
+    margin: 0 20px;
+}
+.section-draw-wrapper ul{
+    font-size: 35px;
+}
+.architecture-scheme{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 40px 0;
+    font-size: 0.9em;
+    text-align: center;
+}
+.scheme-column{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 300px;
+}
+
+.reveal .architecture-scheme img{
+    background: none;
+    border: none;
+    box-shadow: none;
+}
+.arrows{
+    position: relative;
+    margin: 30px;
+}
+
+.arrows::after{
+    content: 'Bridge';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -65%);
+    font-weight: 600;
+    color: #0072ff;
+}
+
+.figure-signature{
+
+}
+.rectangle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 200px;
+    font-size: 0.9em;
+    font-weight: 600;
+}
+.purple{
+    background: #7765db;
+}
+.gray{
+    background: #797c7d;
+}
+
+@keyframes rotate {
+from {transform: rotate(0deg)}
+to {transform: rotate(360deg)}
+}

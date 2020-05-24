@@ -1,50 +1,390 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+    <title>reveal.js</title>
 
-		<link rel="stylesheet" href="css/reset.css">
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css">
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/monokai.css">
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/monokai.css">
+    <!-- Printing and PDF exports -->
+    <link rel="stylesheet" href="lib/css/styles.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+    <script>
+      var link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+        <section class="intro" data-transition="convex" data-background-color="#0D3349">
+            <div class="logo-container">
+                <img class="logo-icon" src="./lib/src/react-logo.svg" alt="logo" width="200" height="200">
+                <span>React Native</span>
+                <div class="phone-background"></div>
+            </div>
+            <small>Created by <a href="https://github.com/rgovin" target="_blank">Roman Govin</a></small>
+        </section>
+        <section data-transition="convex" data-background-color="#0D3349">
 
-		<script src="js/reveal.js"></script>
+            <h3>Agenda</h3>
+            <ul>
+                <li><a href="#/2">What is React Native?</a></li>
+                <li><a href="#/3">What is React?</a></li>
+                <li><a href="#/4">How does React Native work?</a></li>
+                <li><a href="#/5">How does React Native draw?</a></li>
+                <li><a href="#/6">Useful links</a></li>
+            </ul>
+        </section>
+        <section data-transition="convex" data-background-color="#0D3349">
+            <h3>What is React Native?</h3>
+            <ul>
+                <li>JavaScript framework for building iOS and Android mobile apps.</li>
+                <li>Based on popular JavaScript Web framework called React.</li>
+                <li>Created by Facebook. Firstly release iOS version on March 2015 and Android version on September
+                    2015
+                </li>
+                <li>Writing the app by using JavaScript and XML-esque markup (JSX)</li>
+                <li>React Native bridges and invokes the Native rendering API in Objective-C (iOS) and Java (Android)
+                </li>
+            </ul>
+        </section>
+        <section class="code-fragment" data-transition="convex" data-background-color="#0D3349">
+            <h3>What is React?</h3>
+            <ul style="font-size: 35px">
+                <li>Declarative, Efficient, and Flexible JavaScript Library that Building User Interface on Website.
+                </li>
+                <li>React Native is rooted from React.</li>
+                <li>React treats every thing as a Component</li>
+            </ul>
+            <pre class="pre-code"><code class="code">
+class ShoppingList extends React.Component {
+    render() {
+        return (
+            <div className="shopping-list">
+                <h1>Shopping List for {this.props.name}</h1>
+                <ul>
+                    <li>Instagram</li>
+                    <li>WhatsApp</li>
+                    <li>Oculus</li>
+                </ul>
+            </div>
+        )
+    }
+}
+             </code></pre>
+            <small>A React Component</small>
+        </section>
+        <section data-transition="convex">
+            <section data-transition="convex" data-background-color="#0D3349">
+                <h3>How does React Native Work?</h3>
+                <img class="logo-icon" src="./lib/src/how-it-work.png" alt="logo" height="300">
+                <ul>
+                    <li>Use Virtual Dom of React</li>
+                    <li>React can render to different targets</li>
+                    <li>React Native event bridge</li>
+                    <li>Different rendering cycle</li>
+                    <li>Use separated thread</li>
+                    <!--                    <li>React Native bridges and invokes the Native rendering API in Objective-C (iOS) and Java (Android)-->
+                    </li>
+                </ul>
+            </section>
+            <section data-transition="convex" data-background-color="#0D3349">
+                <img class="virtual-dom-image" src="./lib/src/virtual-DOM.png" alt="virtual-dom">
+                <span>Performing calculations in the Virtual DOM limits rerendering in the browser’s DOM</span>
+            </section>
+            <section data-transition="convex" data-background-color="#0D3349">
+                <img src="./lib/src/react-vs-native-components.png" alt="components-scheme">
+                <span>React can render to different targets</span>
+            </section>
+            <section data-transition="convex" data-background-color="#0D3349">
+                <h4>React Native Architecture</h4>
+                <div class="architecture-scheme">
+                    <div class="scheme-column">
+                        <div class="rectangle purple">
+                            <span>The JavaScript Realm</span>
+                        </div>
+                        <span class="figure-signature">JavaScript</span>
+                        <span class="figure-signature">JSCore (VM)</span>
+                        <span class="figure-signature">Single Thread</span>
+                    </div>
+                    <div class="arrows">
+                        <img src="./lib/src/duo-arrow.png" alt="arrow">
+                    </div>
+                    <div class="scheme-column">
+                        <div class="rectangle gray">
+                            <span>The Native Realm</span>
+                        </div>
+                        <span class="figure-signature">ObjC+Swift / Java</span>
+                        <span class="figure-signature">Main UI Thread</span>
+                        <span class="figure-signature">Other BG Threads</span>
+                    </div>
+                </div>
 
-		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
-			Reveal.initialize({
-				hash: true,
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/highlight/highlight.js' },
-					{ src: 'plugin/notes/notes.js', async: true }
-				]
-			});
-		</script>
-	</body>
+            </section>
+            <section data-transition="convex" data-background-color="#0D3349">
+                <h4>Rendering Lifecycle</h4>
+                <img src="./lib/src/mounting-component.png" alt="components-scheme">
+                <small>Mounting Component</small>
+                <img src="./lib/src/re-rendering-component.png" alt="components-scheme">
+                <small>Re-rendering Component</small>
+            </section>
+            <section data-transition="convex" data-background-color="#0D3349">
+                <h4>Async Rules</h4>
+                <ul>
+                    <li>Good benefits of JavaScript is their asynchronous natures.</li>
+                    <li>React Native is running on separated thread using JavaScript asynchronous call via the event
+                        bridge to invokes the host native platform’s underlying APIs and UI elements. (Objective-C,
+                        Java)
+                    </li>
+                    <li>Since, React Native don’t run on the main UI rendering thread, it can do asynchronous call
+                        without impact user’s experience (such as delay).
+                    </li>
+                </ul>
+            </section>
+        </section>
+        <section class="section-draw-wrapper" data-transition="convex">
+            <section data-transition="convex" data-background-color="#0D3349">
+                <h3>How does React Native Draw?</h3>
+                <ul style="font-size: 35px">
+                    <li>React for the Web, render normal HTML elements</li>
+                    <li>React Native, render cross-platform (or platformspecific)
+                        native UI components.
+                    </li>
+                </ul>
+                <div class="draw-wrapper">
+                    <div class="draw-components">
+                        <table>
+                            <tr>
+                                <th><small>React</small></th>
+                                <th><small>React Native</small></th>
+                            </tr>
+                            <tr>
+                                <td><small>&lt;div&gt;</small></td>
+                                <td><small>&lt;View&gt;</small></td>
+                            </tr>
+                            <tr>
+                                <td><small>&lt;span&gt;</small></td>
+                                <td><small>&lt;Text&gt;</small></td>
+                            </tr>
+                            <tr>
+                                <td><small>&lt;li&gt;,&lt;ul&gt;</small></td>
+                                <td><small>&lt;ListView&gt;</small></td>
+                            </tr>
+                            <tr>
+                                <td><small>&lt;img&gt;</small></td>
+                                <td><small>&lt;Image&gt;</small></td>
+                            </tr>
+                        </table>
+                        <span>Cross Platform (iOS, Android)</span>
+                    </div>
+                    <div class="date-picker-os">
+                        <!--                    <img src="./lib/src/DatePickerOS.png" alt="date-picker-os">-->
+                        <i>&lt;DatePickerIOS&gt;</i>
+                        <pre class="pre-code"><code class="code">
+    &lt;DataPicker
+        data={this.state.date}
+        mode="date"
+        timeZoneOffsetInMinutes={this.state.timeZoneOffsetInHours * 60}
+    /&gt;
+                        </code></pre>
+                        <img src="./lib/src/DatePickerOS_View.png" alt="date-picker-os" width="150">
+                        <span>Platform Specific</span>
+                    </div>
+                </div>
+            </section>
+            <section class="code-fragment" data-transition="convex" data-background-color="#0D3349">
+                <h4>Components examples</h4>
+                <pre class="pre-code" style="width: 90%; font-size: 14px;">
+                    <code class="reactnative code">
+import React from "react";
+import { View, Text } from "react-native";
+
+const ViewBoxesWithColorAndText = () => {
+  return (
+    <View
+            style={{
+            flexDirection: "row",
+        height: 100,
+        padding: 20
+      }}
+    >
+      <View style={{ backgroundColor: "blue", flex: 0.3 }} />
+      <View style={{ backgroundColor: "red", flex: 0.5 }} />
+      <Text>Hello World!</Text>
+    </View>
+    );
+};
+export default ViewBoxesWithColorAndText;
+                    </code>
+                </pre>
+                <ul style="font-size: 24px">
+                    <li style="list-style: none; "><h4>Basic Components</h4></li>
+                    <li>View</li>
+                    <li>Text</li>
+                    <li>Image</li>
+                    <li>TextInput</li>
+                    <li>ScrollView</li>
+                    <li>StyleSheet</li>
+                </ul>
+                <ul style="font-size: 24px">
+                    <li style="list-style: none"><h4>User Interface</h4></li>
+                    <li>Button</li>
+                    <li>Picker</li>
+                    <li>Switch</li>
+                </ul>
+                <ul style="font-size: 24px">
+                    <li style="list-style: none"><h4>Others</h4></li>
+                    <li>ActivityIndicator</li>
+                    <li>Alert</li>
+                    <li>Animated</li>
+                    <li>Dimensions</li>
+                    <li>Modal</li>
+                    <li>StatusBar</li>
+                    <li>etc...</li>
+                </ul>
+            </section>
+            <section class="jsx-wraper" data-transition="convex" data-background-color="#0D3349">
+                <h4>JSX</h4>
+                <ul>
+                    <li>Combining JavaScript and XML-markup syntax to create view.</li>
+                    <li>Single File Concept (Write down at Component Class), Not
+                        Seperate Files (Split HTML, CSS, JS)
+                    </li>
+                    <li>Separation of concerns > Separation of technologies</li>
+                </ul>
+                <div class="jsx-code-wraper">
+                    <div class="jsx-code">
+                        <pre class="pre-code"><code class="language-javaScript code">
+// Define a style...
+const HelloMessage = React.createClass({
+    render: function(){
+        // Instead of calling createElement, we return markup
+        return <div>Hello {this.props.name}</div>;
+    };
+});
+// We no longer need a creatElement call here
+React.render(&lt;HelloMessage name="Bonnie" /&gt;, mountNode);
+                            </code></pre>
+                        <span>JSX (Underlined)</span>
+                    </div>
+                    <span class="right-arrow">&#8658;</span>
+                    <pre class="pre-code"><code class="language-html code">
+<div>Hello Bonnie</div>
+                    </code></pre>
+                </div>
+            </section>
+
+            <section data-transition="convex" data-background-color="#0D3349">
+                <h4>Styling</h4>
+                <ul>
+                    <li>In Web, We have CSS, necessary part of the Web.</li>
+                    <li>In React Native, We have something similar to CSS, called Flexbox Layout Model.</li>
+                </ul>
+                <div class="styling-fragments-wrapper">
+                    <div class="styling-code">
+                        <!--                        <Text style = &#123;style&#125;>-->
+                        <pre class="pre-code"><code class="javaScript react code">
+// Define a style...
+const style = {
+    backgroundColor: 'white',
+    fontSize: '16px'
+};
+// ...and then apply it.
+const tv = (
+    <Text style={style}>
+        A styled Text
+    </Text>);
+                        </code></pre>
+                    </div>
+                    <div class="styling-code-css-to-js">
+                        <pre class="pre-code"><code class="language-javaScript code">
+{ background-color : "white"}
+                        </code></pre>
+                        <span>&#8659;</span>
+                        <pre class="pre-code"><code class="language-javaScript code">
+{ backgroundСolor : 'white'}
+                        </code></pre>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="code-fragment" data-transition="convex" data-background-color="#0D3349">
+                <h4>StyleSheet</h4>
+                <pre class="pre-code"><code class="code">
+export default class Home extends Component {
+ render() {
+   return (
+     <View style={styles.container}>
+       <Text style={styles.header}>Basic Header</Text>
+     </View>
+   )
+ }
+const styles = StyleSheet.create({
+  container: {
+    paddingHorizontal: 10,
+    paddingVertical: 10
+  },
+  header: {
+    fontSize: 12,
+    fontFamily: 'Cochin'
+  }
+})
+
+             </code></pre>
+            </section>
+        </section>
+        <section class="useful-links-wrapper" data-transition="convex" data-background-color="#0D3349">
+            <h3>Useful links</h3>
+            <ul>
+                <li><a href="https://github.com/jondot/awesome-react-native" target="_blank">Awesome-react-native</a>
+                </li>
+                <li><a href="https://en.wikipedia.org/wiki/React_Native" target="_blank">Wikipedia</a></li>
+                <li>
+                    <a href="https://www.packtpub.com/application-development/react-native-building-mobile-apps-javascript"
+                       target="_blank">React Native - Building Mobile Apps with JavaScript</a></li>
+                <li><a href="https://www.oreilly.com/library/view/learning-react-native/9781491929049/ch01.html"
+                       target="_blank">Learning React Native by Bonnie Eisenman</a></li>
+            </ul>
+        </section>
+        <section class="section-draw-wrapper" data-transition="convex" data-background-color="#0D3349">
+            <h2>Thanks!</h2>
+        </section>
+    </div>
+</div>
+
+<script src="js/reveal.js"></script>
+
+<script>
+  // More info about config & dependencies:
+  // - https://github.com/hakimel/reveal.js#configuration
+  // - https://github.com/hakimel/reveal.js#dependencies
+  Reveal.initialize({
+    hash: true,
+    dependencies: [
+      { src: 'plugin/markdown/marked.js' },
+      { src: 'plugin/markdown/markdown.js' },
+      {
+        src: 'plugin/highlight/highlight.js',
+        async: true,
+        callback: function () {
+          hljs.initHighlightingOnLoad();
+        },
+      },
+      { src: 'plugin/notes/notes.js', async: true }
+    ]
+  });
+
+</script>
+</body>
 </html>
