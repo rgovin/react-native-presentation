@@ -2,7 +2,7 @@
 
 # React Native
 
-1. Link
+1. https://youtu.be/uJDcsxeVThY
 2. https://rgovin-presentation.netlify.app/
 3. transcript.md
 
